@@ -5,7 +5,7 @@ public class LinkedList {
         list.Add(list,56);
         list.Add(list,30);
         list.Add(list,70);
-        list.RemoveFirst(list);
+        list.RemoveLast(list);
 
 
         list.display(list);
