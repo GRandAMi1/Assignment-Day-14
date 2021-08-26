@@ -8,8 +8,6 @@ public class QueueUsingLinkedList {
         list.enqueue(list,30);
         list.enqueue(list,70);
 
-        list.dequeue(list);
-
         list.display(list);
 
     }
@@ -41,11 +39,6 @@ class SLLOperations {
             }
             temp.next = newNode;
         }
-        return myList;
-    }
-
-    public SLLOperations dequeue(SLLOperations myList) {
-        head = head.next;
         return myList;
     }
 
