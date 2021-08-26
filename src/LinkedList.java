@@ -5,8 +5,6 @@ public class LinkedList {
         list.Add(list,56);
         list.Add(list,30);
         list.Add(list,70);
-        list.RemoveLast(list);
-
 
         list.display(list);
 
@@ -145,6 +143,17 @@ class SLLOperations {
             }
             System.out.println(temp.data);
         }
+    }
+
+    public boolean Search(SLLOperations myList, int element){
+        Node temp=head;
+        while(temp.next!=null) {
+            if (temp.data == element) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
     }
 }
 
