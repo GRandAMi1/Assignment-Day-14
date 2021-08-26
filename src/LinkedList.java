@@ -2,9 +2,9 @@ public class LinkedList {
     public static void main(String[] args) {
         SLLOperations list = new SLLOperations();
 
-        list.Add(list,56);
-        list.Add(list,30);
         list.Add(list,70);
+        list.AddFirst(list,30);
+        list.AddFirst(list,56);
 
 
         list.display(list);
