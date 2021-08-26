@@ -5,6 +5,7 @@ public class LinkedList {
         list.Add(list,56);
         list.Add(list,30);
         list.Add(list,70);
+        list.InsertAfter(list,40,30);
 
         list.display(list);
 
@@ -149,6 +150,20 @@ class SLLOperations {
         Node temp=head;
         while(temp.next!=null) {
             if (temp.data == element) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    public boolean InsertAfter(SLLOperations myList, int element, int after){
+        Node NewNode = new Node(element);
+        Node temp=head;
+        while(temp.next!=null) {
+            if (temp.data == after) {
+                NewNode.next = temp.next;
+                temp.next = NewNode;
                 return true;
             }
             temp = temp.next;
