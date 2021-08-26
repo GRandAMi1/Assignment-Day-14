@@ -3,8 +3,9 @@ public class LinkedList {
         SLLOperations list = new SLLOperations();
 
         list.Add(list,56);
+        list.Add(list,30);
         list.Add(list,70);
-        list.Addnthposition(list,30,2);
+        list.RemoveFirst(list);
 
 
         list.display(list);
