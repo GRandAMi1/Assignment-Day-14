@@ -2,9 +2,9 @@ public class LinkedList {
     public static void main(String[] args) {
         SLLOperations list = new SLLOperations();
 
-        list.Add(list,70);
-        list.AddFirst(list,30);
-        list.AddFirst(list,56);
+        list.Add(list,56);
+        list.Append(list,30);
+        list.Append(list,70);
 
 
         list.display(list);
@@ -48,6 +48,22 @@ class SLLOperations {
         }
         return myList;
     }
+
+    public SLLOperations Append(SLLOperations myList, int element) {
+        Node newNode = new Node(element);
+        if(head == null) {
+            head = newNode;
+        }
+        else {
+            Node temp = head;
+            while(temp.next!=null) {
+                temp=temp.next;
+            }
+            temp.next = newNode;
+        }
+        return myList;
+    }
+
     public SLLOperations Addnthposition(SLLOperations myList, int element, int position){
         Node newNode = new Node(element);
         if (head==null){
