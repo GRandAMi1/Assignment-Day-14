@@ -2,12 +2,15 @@ public class LinkedList {
     public static void main(String[] args) {
         SLLOperations list = new SLLOperations();
 
-        list.Add(list,56);
-        list.Add(list,30);
-        list.Add(list,40);
-        list.Add(list,70);
-        list.DeleteData(list,40);
-
+        list.InsertOrderedData(list,40);
+        list.InsertOrderedData(list,70);
+        list.InsertOrderedData(list,30);
+        list.InsertOrderedData(list,56);
+        list.InsertOrderedData(list,56);
+        list.InsertOrderedData(list,45);
+        list.InsertOrderedData(list,23);
+        list.InsertOrderedData(list,61);
+        list.InsertOrderedData(list,23);
         list.display(list);
 
     }
@@ -185,6 +188,42 @@ class SLLOperations {
             temp = temp.next;
         }
         return false;
+    }
+
+    public void InsertOrderedData(SLLOperations myList, int element){
+        Node NewNode = new Node(element);
+        Node temp = head;
+        Node temp2 = null;
+        if (head == null){
+            Add(myList, element);
+        }
+        else if (head.next == null){
+            if (element <= head.data){
+                AddFirst(myList,element);
+            }
+            else {
+                Append(myList,element);
+            }
+        }
+        else if (element < temp.data){
+            AddFirst(myList, element);
+        }
+        else {
+            while (true) {
+                if (element < temp.data) {
+                    NewNode.next = temp2.next;
+                    temp2.next = NewNode;break;
+                } else {
+                    if (temp.next == null){
+                        temp.next = NewNode;break;
+                    }
+                    else {
+                        temp2 = temp;
+                        temp = temp.next;
+                    }
+                }
+            }
+        }
     }
 }
 
