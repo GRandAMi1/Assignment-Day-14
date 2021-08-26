@@ -4,8 +4,9 @@ public class LinkedList {
 
         list.Add(list,56);
         list.Add(list,30);
+        list.Add(list,40);
         list.Add(list,70);
-        list.InsertAfter(list,40,30);
+        list.DeleteData(list,40);
 
         list.display(list);
 
@@ -166,6 +167,21 @@ class SLLOperations {
                 temp.next = NewNode;
                 return true;
             }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    public boolean DeleteData(SLLOperations myList, int element){
+        Node temp=head;
+        Node temp2 = null;
+        while(temp.next!=null) {
+            if (temp.data == element) {
+                temp2.next = temp.next;
+                temp.next = null;
+                return true;
+            }
+            temp2 = temp;
             temp = temp.next;
         }
         return false;
